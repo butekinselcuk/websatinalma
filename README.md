@@ -20,7 +20,7 @@ Projenin nasıl kullanılacağına dair bilgiler...
 
 Projenin farklı bölümlerini gösteren ekran görüntüleri:
 
-![Anasayfa](gorsel/0.jpg)
+![Anasayfa](gorsel/0.png)
 ![Dashboard](gorsel/1.png)
 ![Dashboard](gorsel/2.png)
 
