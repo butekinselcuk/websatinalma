@@ -1,0 +1,6 @@
+<script type= "text/javascript" src = "countries.js"></script>
+		In Body Section:
+		Select Country:   <select onchange="print_state('state',this.selectedIndex);" id="country" name ="country"></select>
+		<br />
+		City/District/State: <select name ="state" id ="state"></select>
+		<script language="javascript">print_country("country");</script>	

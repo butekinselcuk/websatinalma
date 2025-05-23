@@ -1,0 +1,168 @@
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u1750718/public_html/admin/index.php on line 68
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 13
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 13
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 16
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 16
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 19
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 19
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 22
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 22
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 25
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 25
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 28
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 28
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $totalRows_mesaj in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 54
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 119
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 119
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 137
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 137
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 139
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 139
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 82
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 82
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 91
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 91
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 97
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 97
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 104
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 104
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 111
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 111
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 121
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 121
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 132
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 132
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 142
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 142
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 152
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 152
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 162
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 162
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 172
+[11-Nov-2024 09:36:02 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 172
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u1750718/public_html/admin/index.php on line 68
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 13
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 13
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 16
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 16
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 19
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 19
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 22
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 22
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 25
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 25
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 28
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 28
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $totalRows_mesaj in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 54
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 119
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 119
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 137
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 137
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 139
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 139
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 82
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 82
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 91
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 91
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 97
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 97
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 104
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 104
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 111
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 111
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 121
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 121
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 132
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 132
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 142
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 142
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 152
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 152
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 162
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 162
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 172
+[11-Nov-2024 10:20:05 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 172
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u1750718/public_html/admin/index.php on line 68
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 13
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 13
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 16
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 16
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 19
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 19
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 22
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 22
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 25
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 25
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 28
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 28
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $totalRows_mesaj in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 54
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 119
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 119
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 137
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 137
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 139
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 139
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 82
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 82
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 91
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 91
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 97
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 97
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 104
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 104
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 111
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 111
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 121
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 121
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 132
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 132
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 142
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 142
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 152
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 152
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 162
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 162
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 172
+[17-Feb-2025 15:30:33 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 172
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/u1750718/public_html/admin/index.php on line 68
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 13
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 13
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 16
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 16
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 19
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 19
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 22
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 22
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 25
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 25
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 28
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 28
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $totalRows_mesaj in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 54
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 119
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 119
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 137
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 137
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 139
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/ust.php on line 139
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 82
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 82
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 91
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 91
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 97
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 97
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 104
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 104
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 111
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 111
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 121
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 121
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 132
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 132
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 142
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 142
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 152
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 152
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 162
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 162
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Undefined variable $dil in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 172
+[25-Mar-2025 09:40:39 Europe/Istanbul] PHP Warning:  Trying to access array offset on value of type null in /home/u1750718/public_html/admin/pages/kisayollar/solmenu.php on line 172

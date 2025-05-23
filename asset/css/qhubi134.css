@@ -1,0 +1,53 @@
+﻿
+.header-home-two-inner .header-navigation {
+    background: #5aa34d;
+    background: -webkit-gradient(left top, right top, color-stop(0%, #5aa34d), color-stop(100%, #9385ff));
+    background: -webkit-gradient(linear, left top, right top, from(#5aa34d), to(#9385ff));
+    background: linear-gradient(to right, #5aa34d 0%, #5aa34d 100%);
+    top: 0;
+
+    -webkit-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.32);
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.32);
+}
+
+#map{
+    height:500px;
+    position:relative;
+}
+.has-error-false,.has-error-true{
+    padding:10px;
+}
+.has-error-true{
+    background-color: #ff9b9b;
+}
+.has-error-false{
+    background-color:#c5ffaa;
+}
+.has-error-true ul,.has-error-false ul{
+    margin-bottom:0px;
+}
+.padding-top-60{
+    padding-top:60px;
+}
+.padding-top-20{
+    padding-top:20px !important;
+}
+.padding-top-30{
+    padding-top:30px !important;
+}
+.padding-bottom-120{
+    padding-bottom:120px;
+}
+.faq-active .single-faq-style-one{
+    background: #8cc63e !important;
+}
+.faq-active .single-faq-style-one h3{
+    color:#fff;
+}
+.faq-active .single-faq-style-one p{
+    color:#fff;
+}
+.faq-active .single-faq-style-one .icon-box:before {
+    background: #fff !important;
+}
+

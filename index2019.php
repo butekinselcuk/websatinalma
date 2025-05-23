@@ -1,0 +1,1074 @@
+<?php require_once('Connections/baglan.php'); ?>
+<?php require_once('fonksiyon.php'); ?>
+<?php
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+{
+  if (PHP_VERSION < 6) {
+    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  }
+
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;    
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
+
+$maxRows_duyuru = 2;
+$pageNum_duyuru = 0;
+if (isset($_GET['pageNum_duyuru'])) {
+  $pageNum_duyuru = $_GET['pageNum_duyuru'];
+}
+$startRow_duyuru = $pageNum_duyuru * $maxRows_duyuru;
+
+mysql_select_db($database_baglan, $baglan);
+$query_duyuru = "SELECT * FROM duyuru WHERE duyuru.durum = '1' ORDER BY duyuruID DESC";
+$query_limit_duyuru = sprintf("%s LIMIT %d, %d", $query_duyuru, $startRow_duyuru, $maxRows_duyuru);
+$duyuru = mysql_query($query_limit_duyuru, $baglan) or die(mysql_error());
+$row_duyuru = mysql_fetch_assoc($duyuru);
+
+if (isset($_GET['totalRows_duyuru'])) {
+  $totalRows_duyuru = $_GET['totalRows_duyuru'];
+} else {
+  $all_duyuru = mysql_query($query_duyuru);
+  $totalRows_duyuru = mysql_num_rows($all_duyuru);
+}
+$totalPages_duyuru = ceil($totalRows_duyuru/$maxRows_duyuru)-1;
+
+mysql_select_db($database_baglan, $baglan);
+$query_siteayar = "SELECT * FROM siteconfig";
+$siteayar = mysql_query($query_siteayar, $baglan) or die(mysql_error());
+$row_siteayar = mysql_fetch_assoc($siteayar);
+$totalRows_siteayar = mysql_num_rows($siteayar);
+?>
+
+<!DOCTYPE html>
+<html><!-- InstanceBegin template="/Templates/index.dwt.php" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title><?php echo $row_siteayar['SiteTitle']; ?></title>
+<!-- InstanceEndEditable -->
+<meta content="<?php echo $row_siteayar['Metadesc']; ?>" name="description">
+  <meta content="<?php echo $row_siteayar['MetaName']; ?>" name="keywords">
+
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	
+	<link rel="shortcut icon" href="/favicon.ico"/>
+
+	
+	<link rel="stylesheet" type="text/css" href="3dParty/bootstrap/css/bootstrap.min.css"/>
+	
+	<link rel="stylesheet" type="text/css" href="css/global.css"/>
+	
+	<link rel="stylesheet" type="text/css" href="3dParty/rs-plugin/css/pi.settings.css"/>
+	
+	<link rel="stylesheet" type="text/css" href="css/typo.css"/>
+	
+	<link rel="stylesheet" type="text/css" href="3dParty/colorbox/colorbox.css"/>
+	
+	<link rel="stylesheet" type="text/css" href="css/portfolio.css"/>
+	
+	<link rel="stylesheet" type="text/css" href="css/slider.css"/>
+	
+	<link rel="stylesheet" type="text/css" href="css/counters.css"/>
+	
+	<link rel="stylesheet" type="text/css" href="css/social.css"/>
+	
+
+	<!--Fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic'
+		  rel='stylesheet' type='text/css'/>
+
+	<!--Fonts with Icons-->
+	<link rel="stylesheet" href="3dParty/fontello/css/fontello.css"/>
+	<!-- InstanceBeginEditable name="head" -->
+	<!-- InstanceEndEditable -->
+</head>
+<body>
+<!-- InstanceBeginEditable name="sayfa" -->
+<div id="pi-all">
+  <!-- Header -->
+  <div class="pi-header">
+    <!-- Header row -->
+    <div class="pi-section-w pi-section-dark">
+      <div class="pi-section pi-row-sm">
+        <!-- Phone -->
+        <div class="pi-row-block pi-row-block-txt"> <i class="pi-row-block-icon icon-phone pi-icon-base pi-icon-square"></i>Call Us: <strong><?php echo $row_siteayar['tel']; ?> </strong> </div>
+        <!-- End phone -->
+        <!-- Email -->
+        <div class="pi-row-block pi-row-block-txt pi-hidden-xs"><i
+				class="pi-row-block-icon icon-mail pi-icon-base pi-icon-square"></i>Email: <a
+				href="#"><?php echo $row_siteayar['mail']; ?></a> </div>
+        <!-- End email -->
+        <!-- Social icons -->
+        <div class="pi-row-block pi-pull-right pi-hidden-2xs">
+          <ul class="pi-social-icons pi-stacked pi-jump pi-full-height pi-bordered pi-small pi-colored-bg clearFix">
+            <li><a href="https://twitter.com/<?php echo $row_siteayar['twitter']; ?>" class="pi-social-icon-twitter"><i class="icon-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/<?php echo $row_siteayar['facebook']; ?>" class="pi-social-icon-facebook"><i class="icon-facebook"></i></a></li>
+            <li><a href="https://dribbble.com/qhubi"" class="pi-social-icon-dribbble"><i class="icon-dribbble"></i></a></li>
+          </ul>
+        </div>
+        <!-- End social icons -->
+        <!-- Text -->
+ 
+        <div class="pi-row-block pi-row-block-txt pi-pull-right pi-hidden-xs">Takip Et:</div>
+<div class="pi-row-block pi-row-block-txt pi-pull-right pi-hidden-xs"><a href="admin/">Giriş</a></div>
+        <!-- End text -->
+      </div>
+    </div>
+    <!-- End header row -->
+    <div class="pi-header-sticky">
+      <!-- Header row -->
+      <div class="pi-section-w pi-section-white pi-shadow-bottom pi-row-reducible">
+        <div class="pi-section pi-row-lg">
+          <!-- Logo -->
+          <div class="pi-row-block pi-row-block-logo"> <a href="index.html"><img src="img/logo-base.png" alt=""></a> </div>
+          <!-- End logo -->
+          <!-- Text -->
+          <div class="pi-row-block pi-row-block-txt pi-hidden-2xs">International Quotation Hub</div>
+          <!-- End text -->
+          <!-- Menu -->
+          <div class="pi-row-block pi-pull-right">
+            <ul class="pi-simple-menu pi-has-hover-border pi-full-height pi-hidden-sm">
+              <li class="active"><a href="index.php"><span>Ana Sayfa</span></a> </li>
+              <li><a href="referanslar.php"><span>Referanslar</span></a> </li>
+              <li><a href="sss.php"><span>SSS</span></a> </li>
+              <li><a href="hakkimizda.php"><span>Hakkımızda</span></a> </li>
+              <li><a href="iletisim.php"><span>İletişim</span></a> </li>
+            </ul>
+          </div>
+          <!-- End menu -->
+          <!-- Mobile menu button -->
+          <div class="pi-row-block pi-pull-right pi-hidden-lg-only pi-hidden-md-only">
+            <button class="btn pi-btn pi-mobile-menu-toggler" data-target="#pi-main-mobile-menu"> <i class="icon-menu pi-text-center"></i> </button>
+          </div>
+          <!-- End mobile menu button -->
+          <!-- Mobile menu -->
+          <div id="pi-main-mobile-menu" class="pi-section-menu-mobile-w pi-section-dark">
+            <div class="pi-section-menu-mobile">
+              <!-- Search form -->
+              <form class="form-inline pi-search-form-wide ng-pristine ng-valid" role="form">
+                <div class="pi-input-with-icon">
+                  <div class="pi-input-icon"><i class="icon-search-1"></i></div>
+                  <input type="text" class="form-control pi-input-wide" placeholder="Search..">
+                </div>
+              </form>
+              <!-- End search form -->
+              <ul class="pi-menu-mobile pi-items-have-borders pi-menu-mobile-dark">
+                <li class="active"><a href="index.php"><span>Ana Sayfa</span></a> </li>
+                <li><a href="referanslar.php"><span>Referanslar</span></a> </li>
+                <li><a href="sss.php"><span>SSS</span></a> </li>
+                <li><a href="hakkimizda.php"><span>Hakkımızda</span></a> </li>
+                <li><a href="iletisim.php"><span>İletişim</span></a> </li>
+              </ul>
+            </div>
+          </div>
+          <!-- End mobile menu -->
+        </div>
+      </div>
+      <!-- End header row -->
+    </div>
+  </div>
+  <!-- End header -->
+<div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+<div class="tp-banner-container">
+<div class="tp-banner pi-revolution-slider" >
+<ul class="">	
+
+<!-- SLIDE -->
+<li data-transition="fade" data-slotamount="1" data-masterspeed="1000" >
+<!-- MAIN IMAGE -->
+<img src="img_external/revolution-slider/back-7.jpg"  alt=""  data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat">
+<!-- LAYERS -->
+
+<!-- LAYER NR. 1 -->
+<div class="tp-caption sfl fadeout"
+	 data-x="480"
+	 data-y="90"
+	 data-speed="800"
+	 data-start="1500"
+	 data-easing="Power4.easeOut"
+	 data-endspeed="300"
+	 data-endeasing="Power1.easeIn"
+	 data-captionhidden="on"
+	 style="z-index: 3"><img src="img_external/revolution-slider/young-women.png" alt="">
+</div>
+
+<!-- LAYER NR. 2 -->
+<div class="tp-caption sfr fadeout"
+	 data-x="780"
+	 data-y="50"
+	 data-speed="800"
+	 data-start="1800"
+	 data-easing="Power4.easeOut"
+	 data-endspeed="300"
+	 data-endeasing="Power1.easeIn"
+	 data-captionhidden="on"
+	 style="z-index: 4"><img src="img_external/revolution-slider/young-men.png" alt="">
+</div>
+
+<!-- LAYER NR. 3 -->
+<div class="tp-caption sft str"
+	 data-x="45" data-hoffset="0"
+	 data-y="157"
+	 data-speed="500"
+	 data-start="2400"
+	 data-easing="Back.easeInOut"
+	 data-endspeed="300"
+	 style="z-index: 5; font-size: 20px; color: #21252b; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; line-height: 40px; background: rgba(255, 255, 255, 0.9); padding: 12px 16px; border-radius: 3px; box-shadow: 0 1px 1px rgba(0,0,0,0.15);">
+	 Kurumsal Satınalma Hafızanızı Oluşturun
+</div>
+
+<!-- LAYER NR. 4 -->
+<div class="tp-caption sfl str"
+	 data-x="45" data-hoffset="0"
+	 data-y="236"
+	 data-speed="500"
+	 data-start="2600"
+	 data-easing="Back.easeInOut"
+	 data-endspeed="300"
+	 style="z-index: 6; font-size: 15px; color: #fff; font-weight: 300; line-height: 28px; background: rgba(33, 37, 43, 0.8); padding: 12px 16px; border-radius: 3px;">
+	 Tek tıkla, yatırım maliyeti olmadan Qhubi kullanmaya başlayın.
+</div>
+
+<!-- LAYER NR. 5 -->
+<div class="tp-caption sfb str"
+	 data-x="45" data-hoffset="0"
+	 data-y="303"
+	 data-speed="500"
+	 data-start="2800"
+	 data-easing="Back.easeInOut"
+	 data-endspeed="300"
+	 style="z-index: 7;">
+</div>
+
+</li>	
+
+<!-- SLIDE  -->
+<li data-transition="fade" data-slotamount="1" data-masterspeed="1000" >
+<!-- MAIN IMAGE -->
+<img src="img_external/revolution-slider/back-8.jpg"  alt=""  data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat">
+<!-- LAYERS -->
+
+<!-- LAYER NR. 1 -->
+<div class="tp-caption sfb fadeout"
+	 data-x="535"
+	 data-y="28"
+	 data-speed="800"
+	 data-start="1500"
+	 data-easing="Power4.easeOut"
+	 data-endspeed="300"
+	 data-endeasing="Power1.easeIn"
+	 data-captionhidden="on"
+	 style="z-index: 3"><img src="img_external/revolution-slider/pad-hands.png" alt="">
+</div>
+
+<!-- LAYER NR. 2 -->
+<div class="tp-caption fade fadeout"
+	 data-x="677"
+	 data-y="72"
+	 data-speed="300"
+	 data-start="1700"
+	 data-easing="Power4.easeOut"
+	 data-endspeed="0"
+	 data-endeasing="Power1.easeIn"
+	 data-captionhidden="on"
+	 style="z-index: 4"><img src="img_external/revolution-slider/drawing-boy-1.png" alt="">
+</div>
+
+<!-- LAYER NR. 3 -->
+<div class="tp-caption fade fadeout"
+	 data-x="677"
+	 data-y="72"
+	 data-speed="300"
+	 data-start="3000"
+	 data-easing="Power4.easeOut"
+	 data-endspeed="0"
+	 data-endeasing="Power1.easeIn"
+	 data-captionhidden="on"
+	 style="z-index: 5"><img src="img_external/revolution-slider/drawing-boy-2.png" alt="">
+</div>
+
+<!-- LAYER NR. 4 -->
+<div class="tp-caption sft str"
+	 data-x="45" data-hoffset="0"
+	 data-y="157"
+	 data-speed="500"
+	 data-start="2400"
+	 data-easing="Back.easeInOut"
+	 data-endspeed="300"
+	 style="z-index: 6; font-size: 20px; color: #21252b; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; line-height: 40px; background: rgba(255, 255, 255, 0.9); padding: 12px 16px; border-radius: 3px; box-shadow: 0 1px 1px rgba(0,0,0,0.15);">
+	 A'DAN Z'YE SATIN ALMA ÇÖZÜMLERİMİZ
+</div>
+
+<!-- LAYER NR. 5 -->
+<div class="tp-caption sfl str"
+	 data-x="45" data-hoffset="0"
+	 data-y="236"
+	 data-speed="500"
+	 data-start="2600"
+	 data-easing="Back.easeInOut"
+	 data-endspeed="300"
+	 style="z-index: 7; font-size: 15px; color: #fff; font-weight: 300; line-height: 28px; background: rgba(33, 37, 43, 0.8); padding: 12px 16px; border-radius: 3px;">
+	 Çözümlerimiz İle Endirekt Satın Alımlarınızda Zaman Ve Maliyet Tasarrufu Elde Edersiniz
+</div>
+
+<!-- LAYER NR. 6 -->
+<div class="tp-caption sfb str"
+	 data-x="45" data-hoffset="0"
+	 data-y="303"
+	 data-speed="500"
+	 data-start="2800"
+	 data-easing="Back.easeInOut"
+	 data-endspeed="300"
+	 style="z-index: 8;">
+</div>
+
+</li>
+
+<!-- SLIDE  -->
+<li data-transition="fade" data-slotamount="1" data-masterspeed="1000" >
+<!-- MAIN IMAGE -->
+<img src="img_external/revolution-slider/back-10.jpg"  alt=""  data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat">
+<!-- LAYERS -->
+
+<!-- LAYER NR. 1 -->
+<div class="tp-caption sfb fadeout"
+	 data-x="815"
+	 data-y="252"
+	 data-speed="900"
+	 data-start="1000"
+	 data-easing="Power4.easeOut"
+	 data-endspeed="300"
+	 data-endeasing="Power1.easeIn"
+	 data-captionhidden="on"
+	 style="z-index: 3"><img src="img_external/revolution-slider/men-head.png" alt="">
+</div>
+
+<!-- LAYER NR. 2 -->
+<div class="tp-caption sfb fadeout"
+	 data-x="435"
+	 data-y="270"
+	 data-speed="900"
+	 data-start="1300"
+	 data-easing="Power4.easeOut"
+	 data-endspeed="300"
+	 data-endeasing="Power1.easeIn"
+	 data-captionhidden="on"
+	 style="z-index: 4"><img src="img_external/revolution-slider/women-head.png" alt="">
+</div>
+
+<!-- LAYER NR. 3 -->
+<div class="tp-caption sft fadeout"
+	 data-x="720"
+	 data-y="97"
+	 data-speed="800"
+	 data-start="2000"
+	 data-easing="Power4.easeOut"
+	 data-endspeed="300"
+	 data-endeasing="Power1.easeIn"
+	 data-captionhidden="on"
+	 style="z-index: 5"><img src="img_external/revolution-slider/light-bulb-3.png" alt="">
+</div>
+
+<!-- LAYER NR. 4 -->
+<div class="tp-caption fade fadeout"
+	 data-x="669"
+	 data-y="43"
+	 data-speed="500"
+	 data-start="2400"
+	 data-easing="Power4.easeOut"
+	 data-endspeed="300"
+	 data-endeasing="Power1.easeIn"
+	 data-captionhidden="on"
+	 style="z-index: 6"><img src="img_external/revolution-slider/light-bulb-4.png" alt="">
+</div>
+
+<!-- LAYER NR. 5 -->
+<div class="tp-caption sft str"
+	 data-x="45" data-hoffset="0"
+	 data-y="157"
+	 data-speed="500"
+	 data-start="2400"
+	 data-easing="Back.easeInOut"
+	 data-endspeed="300"
+	 style="z-index: 7; font-size: 20px; color: #21252b; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; line-height: 40px; background: rgba(255, 255, 255, 0.9); padding: 12px 16px; border-radius: 3px; box-shadow: 0 1px 1px rgba(0,0,0,0.15);">
+	 İHTİYAÇLARINIZA YÖNELİK ÇÖZÜMLERİMİZ İLE TANIŞIN
+</div>
+
+<!-- LAYER NR. 6 -->
+<div class="tp-caption sfl str"
+	 data-x="45" data-hoffset="0"
+	 data-y="236"
+	 data-speed="500"
+	 data-start="2600"
+	 data-easing="Back.easeInOut"
+	 data-endspeed="300"
+	 style="z-index: 8; font-size: 15px; color: #fff; font-weight: 300; line-height: 28px; background: rgba(33, 37, 43, 0.8); padding: 12px 16px; border-radius: 3px;">
+	 Size özel tüm Satın Alma Çözümleri, E-Ticaret Portalları ve Satın Alma Teknoloji Çözümleri ile tanışmak için başvuru formumuzu doldurarak bizimle iletişime geçebilirsiniz.
+</div>
+
+<!-- LAYER NR. 7 -->
+<div class="tp-caption sfb str"
+	 data-x="45" data-hoffset="0"
+	 data-y="303"
+	 data-speed="500"
+	 data-start="2800"
+	 data-easing="Back.easeInOut"
+	 data-endspeed="300"
+	 style="z-index: 9;">
+</div>
+
+</li>
+
+</ul>
+</div>
+</div>
+
+<span class="revolution-slider"></span>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-shadow-inside-top pi-section-dark">
+	<div class="pi-texture" style="background: url(img/hexagon.png) repeat;"></div>
+	<div class="pi-section pi-padding-top-50 pi-padding-bottom-30">
+		
+		<!-- Row -->
+		<div class="pi-row">
+			
+			<!-- Col 9 -->
+			<div class="pi-col-sm-9 pi-center-text-xs">
+				<h3 class="pi-weight-300">
+					Raporlanabilir Satınalma Süreçleri ile Tasarruf Edin
+				</h3>
+				
+				<p class="lead-16">
+					 Qhubi,bulut tabanlı satınalma yazılımıdır. Talep oluşturun, teklifleri girin, onaya sunun, siparişe çevirin. Her aşamasında takip edin, raporlayın, kazanın.
+				</p>
+			</div>
+			<!-- End col 9 -->
+
+			<div class="pi-clearfix pi-visible-xs"></div>
+
+			<!-- Col 3 -->
+			<div class="pi-col-sm-3 pi-text-right pi-center-text-xs">
+				<p class="pi-margin-top-5">
+					<a href="kayit.php" class="btn pi-btn-base pi-btn-no-border pi-btn-big">
+						Ücretsiz Kayıt Ol
+					</a>
+				</p>
+			</div>
+			<!-- End col 3 -->
+			
+		</div>
+		<!-- End row -->
+
+	</div>
+</div>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-section-white piCounter">
+	<div class="pi-section pi-padding-bottom-30">
+
+		<h2 class="h4 pi-weight-700 pi-uppercase pi-letter-spacing pi-has-bg pi-margin-bottom-30">
+			Neler Kazanırsınız?
+		</h2>
+		
+		<!-- Row -->
+		<div class="pi-row">
+			<!-- Col 4 -->
+			<div class="pi-col-xs-6 pi-col-sm-4 pi-padding-bottom-20">
+			
+				<div class="pi-icon-box pi-icon-box-hover">
+				
+					<div class="pi-icon-box-icon pi-icon-box-icon-base">
+						<i class="icon-search"></i>
+					</div>
+					
+					<div class="pi-icon-box-content">
+					
+						<h4><class="pi-link-dark">Stratejik işlere odaklanın</a></h4>
+
+						<p class="pi-margin-bottom-10">
+							Satınalma departmanları Procuwave ile rutin işlemleri otomatize ederek, stratejik tedarikçi ilişkilerine daha fazla zaman ayırabilir. Böylece şirketlerin satınalma fonksiyonları maliyet merkezi olmaktan çıkıp şirketin finansal sonuçlarına değer katan stratejik merkezler haline gelmektedir.
+						</p>
+					</div>
+					
+				</div>
+				
+			</div>
+			<!-- End col 4 -->
+   	<!-- Col 4 -->
+			<div class="pi-col-xs-6 pi-col-sm-4 pi-padding-bottom-10">
+			
+				<div class="pi-icon-box pi-icon-box-hover">
+				
+					<div class="pi-icon-box-icon pi-icon-box-icon-base">
+						<i class="icon-cog"></i>
+					</div>
+					
+					<div class="pi-icon-box-content">
+					
+						<h4><class="pi-link-dark">Maliyetinizi düşürün</a></h4>
+
+						<p class="pi-margin-bottom-10">
+							Tedarikçileriniz arasındaki rekabeti sistematik olarak arttırır, ürün/hizmet kalitesinden feragat etmeden maliyetlerinizi minimumlara düşürebilirsiniz. Bu sayede maliyetlerdeki yüksek baskıdan kurtulabilirsiniz.
+						</p>
+
+					</div>
+					
+				</div>
+				
+			</div>
+			<!-- End col 4 -->         
+            
+            
+			<!-- Col 4 -->
+			<div class="pi-col-xs-6 pi-col-sm-4 pi-padding-bottom-10">
+			
+				<div class="pi-icon-box pi-icon-box-hover">
+				
+					<div class="pi-icon-box-icon pi-icon-box-icon-base">
+						<i class="icon-lamp"></i>
+					</div>
+					
+					<div class="pi-icon-box-content">
+					
+						<h4><class="pi-link-dark">Talep Yönetimi</h4>
+
+						<p class="pi-margin-bottom-10">
+							Tek tıkla talep oluşturun. Nereye, ne zaman, neyin gerektiğini belirtin. Artık hiçbir talep unutmayın, geciktirmeyin veya 2 kez almayın.
+						</p>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			<!-- End col 4 -->
+			
+          <p class="pi-margin-bottom-10">&nbsp;
+							
+						</p>
+						
+                        <p class="pi-margin-bottom-10">&nbsp;
+							
+						</p>
+                         <p class="pi-margin-bottom-10">&nbsp;
+							
+						</p>
+                         <p class="pi-margin-bottom-10">&nbsp;
+							
+						</p>
+						
+			<!-- Col 4 -->
+			<div class="pi-col-xs-6 pi-col-sm-4 pi-padding-bottom-10">
+			
+				<div class="pi-icon-box pi-icon-box-hover">
+				
+					<div class="pi-icon-box-icon pi-icon-box-icon-base">
+						<i class="icon-monitor"></i>
+					</div>
+					
+					<div class="pi-icon-box-content">
+					
+						<h4><class="pi-link-dark">Teklif Yönetimi</a></h4>
+
+						<p class="pi-margin-bottom-10">
+							Tedarikçilerinizden aldığınız teklifleri tek ekranda yönetin. 
+						</p>
+
+					</div>
+					
+				</div>
+				
+			</div>
+			<!-- End col 4 -->
+
+			<div class="pi-clearfix pi-visible-xs"></div>
+
+			<!-- Col 4 -->
+			<div class="pi-col-xs-6 pi-col-sm-4 pi-padding-bottom-10">
+			
+				<div class="pi-icon-box pi-icon-box-hover">
+				
+					<div class="pi-icon-box-icon pi-icon-box-icon-base">
+						<i class="icon-pencil"></i>
+					</div>
+					
+					<div class="pi-icon-box-content">
+					
+						<h4><class="pi-link-dark">Şeffaflığı arttırın</a></h4>
+
+						<p class="pi-margin-bottom-10">
+							Satın alma süreçlerinizi güvenilir bir sistemde, adil ve şeffaf bir şekilde yönetebilirsiniz.
+
+						</p>
+
+					</div>
+					
+				</div>
+				
+			</div>
+            
+            
+			<!-- End col 4 -->
+			
+			<div class="pi-clearfix pi-hide pi-visible-sm-only"></div>
+			
+		
+
+			<div class="pi-clearfix pi-visible-xs"></div>
+
+			<!-- Col 4 -->
+			<div class="pi-col-xs-6 pi-col-sm-4 pi-padding-bottom-20">
+			
+				<div class="pi-icon-box pi-icon-box-hover">
+				
+					<div class="pi-icon-box-icon pi-icon-box-icon-base">
+						<i class="icon-mobile"></i>
+					</div>
+					
+					<div class="pi-icon-box-content">
+					
+						<h4><class="pi-link-dark">Tedarikçi sayınızı arttırın</h4>
+
+						<p class="pi-margin-bottom-10">
+							Çok kapsamlı ve sürekli genişleyen tedarikçi veritabanı ile birçok değerli tedarikçi bilgisine ulaşabilirsiniz.Rekabeti sürekli canlı tutabilirsiniz.
+						</p>
+						
+						
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			<!-- End col 4 -->
+			
+			
+			
+		</div>
+		<!-- End row -->
+		
+	</div>
+</div>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+		
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-section-parallax pi-slider-enabled" style="background-image: url(img_external/gallery/consulting.jpg);">
+	<div class="pi-texture" style="background: rgba(30, 35, 41, 0.7);"></div>
+	<div class="pi-section pi-padding-top-100 pi-padding-bottom-80">
+		
+		<!-- Slider -->
+		<div class="pi-slider-wrapper pi-slider-arrows-inside pi-slider-show-arrow-hover pi-text-center">
+			<div class="pi-slider pi-slider-animate-opacity">
+				
+				<!-- Row -->
+				<div class="pi-row">
+					
+					<!-- Col 8 -->
+					<div class="pi-col-sm-8 pi-col-sm-offset-2">
+				
+						<!-- Slide -->
+						<div class="pi-slide">	
+							<p class="lead-20 pi-margin-bottom-10 pi-text-white pi-text-shadow">
+						 Qhubi sayesinde, çok sayıda aday tedarikçimizin olduğu alım projelerimizde uzun görüşme turlarının haftalar aldığı bir süreci 1-2 saat gibi kısa bir zamanda, şeffaf ve aynı anda tüm katılımcıların bilgileneceği şekilde tamamlama imkanımız var.
+Yaratılan açık rekabetin getirdiği ekonomik faydalar da düşünüldüğünde, e-satınalma hizmetini tecrübeli ekibiyle mükemmel bir şekilde sunan qhubi, satın alma sürecimizin vazgeçilmez bir parçası olmuştur.
+                
+							</p>
+							<p class="pi-text-base">
+								<i class="icon-star">
+								</i>
+								<i class="icon-star">
+								</i>
+								<i class="icon-star">
+								</i>
+							</p>
+							<p class="lead-18 pi-weight-500 pi-text-white pi-uppercase pi-letter-spacing pi-margin-bottom-5">
+								Anonymous
+							</p>
+							<p class="pi-italic">
+								Executive Director <a href="#">Company Inc.</a>
+							</p>
+						</div>
+						<!-- End slide -->
+						
+						<!-- Slide -->
+						<div class="pi-slide">	
+							<p class="lead-20 pi-margin-bottom-10 pi-text-white pi-text-shadow">
+					    Artan rekabet şartlarıyla, her şirketin olduğu gibi bizim de en önemli şirket hedefimiz maliyetleri minimuma indirecek çözümler bulmaktır. Bu doğrultuda qhubi'nin bize sunduğu e-satınalma hizmeti, diğer pazarlık yöntemleri arasında en etkili olanıdır..
+e-satınalma yöntemi, uygulanması mümkün olan her pazarlıkta öncelikli seçimimiz olmaktadır. Ayrıca, yöntemin sağladığı şeffaflık ve hız, sürecin verimliliği anlamında son derece başarılıdır.
+                
+							</p>
+							<p class="pi-text-base">
+								<i class="icon-star">
+								</i>
+								<i class="icon-star">
+								</i>
+								<i class="icon-star">
+								</i>
+							</p>
+							<p class="lead-18 pi-weight-500 pi-text-white pi-uppercase pi-letter-spacing pi-margin-bottom-5">
+								Anonymous
+							</p>
+							<p class="pi-italic">
+								Project Director <a href="#">Company Inc.</a>
+							</p>
+						</div>
+						<!-- End slide -->
+
+					</div>
+					<!-- End col 8 -->
+					
+				</div>
+				<!-- End row -->
+				
+			</div>
+		</div>
+		<!-- End slider -->
+		
+	</div>
+</div>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-section-white">
+	<div class="pi-section pi-padding-bottom-30">
+		
+		<!-- Row -->
+		<div class="pi-row pi-padding-bottom-10">	
+			
+			<!-- Col 4 -->
+		  <div class="pi-col-sm-6 pi-padding-bottom-40">
+				
+			  <h4 class="pi-weight-700 pi-uppercase pi-letter-spacing pi-has-bg pi-margin-bottom-30">
+					<a href="#" class="pi-link-dark">DUYURULAR</a>
+			</h4>
+            <?php do { ?>
+				<h2 class="h6 pi-margin-top-minus-5 pi-margin-bottom-5">
+				  <a href="#" class="pi-link-dark"><?php echo $row_duyuru['baslik']; ?></a>
+			  </h2>
+				<ul class="pi-meta pi-margin-bottom-10">
+					<li><i class="icon-clock"></i><?php echo $row_duyuru['tarih']; ?></li>
+					<li><i class="icon-comment"></i><?php echo $row_duyuru['kimden']; ?></li>
+				</ul>
+			<p>
+			<?php echo $row_duyuru['mesaj']; ?>
+				</p>
+				
+				
+				  <hr class="pi-divider pi-divider-dashed">
+				  <?php } while ($row_duyuru = mysql_fetch_assoc($duyuru)); ?>
+
+			</div>
+			<!-- End col 4 -->
+			
+			<!-- Col 6 -->
+			<div class="pi-col-sm-6 pi-padding-bottom-40">
+			
+				<h2 class="h4 pi-weight-700 pi-uppercase pi-letter-spacing pi-has-bg pi-margin-bottom-30">
+					Teklif Beklyen Mal Grupları
+				</h2>
+				
+				<!-- Progress bar -->
+				<div class="pi-counter pi-counter-line" data-counter-type="line" data-count-from="0" data-count-to="85" data-easing="easeInCirc" data-duration="2000" data-frames-per-second="10">
+					
+					<div class="pi-counter-count">
+						<p><i class="icon-pencil pi-icon-left"></i>Bağlantı Elemanları 85%</p>
+						<div class="pi-counter-progress pi-bar-one"></div>
+					</div>
+					
+				</div>
+				<!-- End progress bar -->
+
+				<!-- Progress bar -->
+				<div class="pi-counter pi-counter-line" data-counter-type="line" data-count-from="0" data-count-to="35" data-easing="easeInCirc" data-duration="2000" data-frames-per-second="10">
+
+					<div class="pi-counter-count">
+						<p><i class="icon-database pi-icon-left"></i>Ham madde 35%</p>
+						<div class="pi-counter-progress pi-bar-two"></div>
+					</div>
+
+				</div>
+				<!-- End progress bar -->
+				
+				<!-- Progress bar -->
+				<div class="pi-counter pi-counter-line pi-slave" data-counter-type="line" data-count-from="0" data-count-to="19" data-easing="easeInCirc" data-duration="2000" data-frames-per-second="10">
+					
+					<div class="pi-counter-count">
+						<p><i class="icon-link pi-icon-left"></i>Metal parça 19%</p>
+						<div class="pi-counter-progress pi-bar-three"></div>
+					</div>
+					
+				</div>
+				<!-- End progress bar -->
+				
+				<!-- Progress bar -->
+				<div class="pi-counter pi-counter-line pi-slave" data-counter-type="line" data-count-from="0" data-count-to="23" data-easing="easeInCirc" data-duration="2000" data-frames-per-second="10">
+					
+					<div class="pi-counter-count">
+						<p><i class="icon-eye pi-icon-left"></i>Kalıp 23%</p>
+						<div class="pi-counter-progress pi-bar-four"></div>
+					</div>
+					
+				</div>
+				<!-- End progress bar -->
+
+			</div>
+			<!-- End col 6 -->
+			
+		</div>
+		<!-- End row -->
+		
+	</div>
+</div>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-section-parallax" style="background-image: url(img_external/gallery/new-york.jpg);">
+	<div class="pi-texture pi-section-overlay-base"></div>
+	<div class="pi-section pi-padding-bottom-30">
+		
+		<!-- Row -->
+		<div class="pi-row pi-grid-small-margins pi-text-center">
+			
+			<!-- Col 3 -->
+			<div class="pi-col-sm-3 pi-col-2xs-6 pi-padding-bottom-20">
+				<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="30" data-easing="easeInCirc" data-duration="1000" data-frames-per-second="0">
+					<div class="pi-counter-count pi-counter-count-big pi-text-white pi-weight-300">
+					
+						<p>
+							<i class="icon-briefcase pi-icon pi-icon-big pi-text-white"></i>
+						</p>
+					
+						<div class="pi-counter-number">30</div>
+
+					</div>
+					<p>Sed ut perspic unde</p>
+				</div>
+			</div>
+			<!-- End col 3 -->
+			
+			<!-- Col 3 -->
+			<div class="pi-col-sm-3 pi-col-2xs-6 pi-padding-bottom-20">
+				<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="1000000" data-easing="easeInCirc" data-duration="2000" data-frames-per-second="10">
+					<div class="pi-counter-count pi-counter-count-big pi-text-white pi-weight-300">
+
+						<p>
+							<i class="icon-globe pi-icon pi-icon-big pi-text-white"></i>
+						</p>
+
+						$<span class="pi-counter-number">1000000</span>
+
+					</div>
+					<p>Deserunt mollitia animi</p>
+				</div>
+			</div>
+			<!-- End col 3 -->
+			
+			<!-- Col 3 -->
+			<div class="pi-col-sm-3 pi-col-2xs-6 pi-padding-bottom-20">
+				<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="73" data-easing="easeInCirc" data-duration="3000" data-frames-per-second="10">
+					<div class="pi-counter-count pi-counter-count-big pi-text-white pi-weight-300">
+					
+						<p>
+							<i class="icon-download pi-icon pi-icon-big pi-text-white"></i>
+						</p>
+					
+						<span class="pi-counter-number">73</span>%
+
+					</div>
+					<p>Temporibus autem</p>
+				</div>
+			</div>
+			<!-- End col 3 -->
+			
+			<!-- Col 3 -->
+			<div class="pi-col-sm-3 pi-col-2xs-6 pi-padding-bottom-20">
+				<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="59" data-easing="easeInCirc" data-duration="4000" data-frames-per-second="10">
+					<div class="pi-counter-count pi-counter-count-big pi-text-white pi-weight-300">
+					
+						<p>
+							<i class="icon-paper-plane pi-icon pi-icon-big pi-text-white"></i>
+						</p>
+					
+						<span class="pi-counter-number">59</span>k
+
+					</div>
+					<p>Similique sunt in culpa</p>
+				</div>
+			</div>
+			<!-- End col 3 -->
+			
+		</div>
+		<!-- End row -->
+		
+	</div>
+</div>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - --></div>
+ 
+  
+  <!-- Footer -->
+  <!-- Widget area -->
+  <div class="pi-section-w pi-border-bottom pi-border-top-light pi-section-dark">
+    <div class="pi-section pi-padding-bottom-10">
+      <!-- Row -->
+      <div class="pi-row">
+        <!-- Col 4 -->
+        <div class="pi-col-md-4 pi-padding-bottom-30">
+          <h6 class="pi-margin-bottom-25 pi-weight-700 pi-uppercase pi-letter-spacing"> <a href="#" class="pi-link-no-style">SON Tweet</a> </h6>
+          <!-- Twitter -->
+          <div class="pi-footer-tweets">
+              <a class="twitter-timeline" href="https://twitter.com/qhubicom?ref_src=twsrc%5Etfw">Tweets by qhubicom</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+          </div>
+          <!-- End twitter -->
+        </div>
+        <!-- End col 4 -->
+        <div class="pi-clearfix pi-hidden-lg-only pi-hidden-md-only"></div>
+        <!-- Col 4 -->
+        <div class="pi-col-md-4 pi-col-sm-6 pi-padding-bottom-30" style="background-image: url('img/map-base.png'); background-position: 50% 55px; background-repeat: no-repeat;">
+          <h6 class="pi-margin-bottom-25 pi-weight-700 pi-uppercase pi-letter-spacing"> Contact Us </h6>
+          <!-- Contact info -->
+          <ul class="pi-list-with-icons pi-list-big-margins">
+            <li> <span class="pi-bullet-icon"><i class="icon-location"></i></span> <strong>Address:</strong><?php echo $row_siteayar['adres']; ?> </li>
+            <li> <span class="pi-bullet-icon"><i class="icon-phone"></i></span> <strong>Phone:</strong><?php echo $row_siteayar['tel']; ?> </li>
+            <li> <span class="pi-bullet-icon"><i class="icon-mail"></i></span> <strong>Email:</strong> <a href="<?php echo $row_siteayar['mail']; ?>"><?php echo $row_siteayar['mail']; ?></a> </li>
+            <li> <span class="pi-bullet-icon"><i class="icon-clock"></i></span> Monday - Sunday: <strong>7/24</strong></li>
+          </ul>
+          <!-- End contact info -->
+        </div>
+        <!-- End col 4 -->
+        <!-- Col 4 -->
+        <div class="pi-col-md-4 pi-col-sm-6 pi-padding-bottom-30">
+          <h6 class="pi-margin-bottom-25 pi-weight-700 pi-uppercase pi-letter-spacing"> Say Hey </h6>
+          <!-- Contact form -->
+          <form role="form" action="handlers/formContact.php" data-captcha="no" class="pi-contact-form">
+            <div class="pi-error-container"></div>
+            <div class="pi-row pi-grid-small-margins">
+              <div class="pi-col-2xs-6">
+                <div class="form-group">
+                  <div class="pi-input-with-icon">
+                    <div class="pi-input-icon"><i class="icon-user"></i></div>
+                    <input class="form-control form-control-name" id="exampleInputName"
+										   placeholder="Name">
+                  </div>
+                </div>
+              </div>
+              <div class="pi-col-2xs-6">
+                <div class="form-group">
+                  <div class="pi-input-with-icon">
+                    <div class="pi-input-icon"><i class="icon-mail"></i></div>
+                    <input type="email" class="form-control form-control-email" id="exampleInputEmail"
+										   placeholder="Email">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="pi-input-with-icon">
+                <div class="pi-input-icon"><i class="icon-pencil"></i></div>
+                <textarea class="form-control form-control-comments" id="exampleInputMessage"
+									  placeholder="Message"
+									  rows="3"></textarea>
+              </div>
+            </div>
+            <p>
+              <button type="submit" class="btn pi-btn-base pi-btn-no-border">Send</button>
+            </p>
+          </form>
+          <!-- End contact form -->
+        </div>
+        <!-- End col 4 -->
+      </div>
+      <!-- End row -->
+    </div>
+  </div>
+  <!-- End widget area -->
+  <!-- Copyright area -->
+  <div class="pi-section-w pi-section-dark pi-border-top-light pi-border-bottom-strong-base">
+    <div class="pi-section pi-row-lg pi-center-text-2xs pi-clearfix">
+      <!-- Social icons -->
+      <div class="pi-row-block pi-pull-right pi-hidden-2xs">
+        <ul class="pi-social-icons-simple pi-small clearFix">
+          <li><a href="https://www.facebook.com/<?php echo $row_siteayar['facebook']; ?>" class="pi-social-icon-facebook"><i class="icon-facebook"></i></a></li>
+          <li><a href="https://twitter.com/<?php echo $row_siteayar['twitter']; ?>" class="pi-social-icon-twitter"><i class="icon-twitter"></i></a></li>
+          <li><a href="https://dribbble.com/qhubi" class="pi-social-icon-dribbble"><i class="icon-dribbble"></i></a></li>
+          <li><a href="https://qhubi.tumblr.com/" class="pi-social-icon-tumblr"><i class="icon-tumblr"></i></a></li>
+          <li><a href="https://vimeo.com/qhubi" class="pi-social-icon-vimeo"><i class="icon-vimeo"></i></a></li>
+          <li><a href="#" class="pi-social-icon-rss"><i class="icon-rss"></i></a></li>
+        </ul>
+      </div>
+      <!-- End social icons -->
+      <!-- Footer logo -->
+      <div class="pi-row-block pi-row-block-logo pi-row-block-bordered"><a href="#"><img src="img/logo-opacity-dark.png" alt=""></a></div>
+      <!-- End footer logo -->
+      <!-- Text -->
+      <span class="pi-row-block pi-row-block-txt pi-hidden-xs"><a href="#"><?php echo $row_siteayar['GCode']; ?></a> </span>
+      <!-- End text -->
+    </div>
+  </div>
+  <!-- End copyright area -->
+  <!-- End footer -->
+</div>
+<div class="pi-scroll-top-arrow" data-scroll-to="0"></div>
+<script src="3dParty/jquery-1.11.0.min.js"></script>
+<script src="3dParty/bootstrap/js/bootstrap.min.js"></script>
+<script src="3dParty/jquery.touchSwipe.min.js"></script>
+<script src="3dParty/gauge.min.js"></script>
+<script src="3dParty/inview.js"></script>
+<script src="3dParty/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script src="3dParty/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<script src="3dParty/requestAnimationFramePolyfill.min.js"></script>
+<script src="3dParty/jquery.scrollTo.min.js"></script>
+<script src="3dParty/colorbox/jquery.colorbox-min.js"></script>
+<script src="scripts/pi.global.js"></script>
+<script src="scripts/pi.slider.js"></script>
+<script src="scripts/pi.init.slider.js"></script>
+<script src="3dParty/jquery.easing.1.3.js"></script>
+<script src="scripts/pi.counter.js"></script>
+<script src="scripts/pi.init.counter.js"></script>
+<script src="scripts/pi.parallax.js"></script>
+<script src="scripts/pi.init.parallax.js"></script>
+<script src="scripts/pi.init.revolutionSlider.js"></script>
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>
+<?php
+mysql_free_result($duyuru);
+
+mysql_free_result($siteayar);
+?>

@@ -1,0 +1,112 @@
+﻿<?php
+/*
+   TURKCE CEVIRIYE HOSGELDINIZ
+   Ceviren : Selçuk Butekin
+*/
+unset($dil);
+// dil dosyasi ayarlari
+   $dil["dil"]                     = 'Türkçe';
+   $dil["dil_seciniz"]             = 'Dil Seçiniz';
+// site degiskenleri
+   $dil["site_basligi"]            = 'Bilmemne Projesi Sayfasi';
+   $dil["kaydet"]        = 'Kaydet';
+   $dil["duzenle"]        = 'Düzenle';
+   $dil["iptal"]        = 'İptal Et';
+// menu
+
+// Kayıt sayfası Dil ayarları
+
+   $dil["kayit_baslik"]        = 'Kayıt Sayfası';
+   $dil["sirketadi"]           = 'Şirket Adı :';
+   $dil["kayit_sirketbilgi_baslik"]        = 'Genel Şirket Bilgileri';
+   $dil["kayit_vergi"]        = 'Vergi Dairesi :';
+   $dil["kayit_vergi_no"]        = 'Vergi Numarası :';
+   $dil["kayit_ticari_sicil_no"]        = 'Ticaret Sicil No :';
+   $dil["kayit_bus_reg_no"]        = 'Bussines Reg. Number:';
+   $dil["kayit_hukukiyapi"]        = 'Hukuki Yapı :';
+   $dil["kayit_topla_uretim"]        = 'Toplam üretim alanı (m2) :';
+   $dil["kayit_calisan_sayi"]        = 'Çalışan sayısı :';
+   $dil["kayit_adres_bilgi"]        = 'Adres Bilgileri';
+   $dil["kayit_ulke"]        = 'Ülke :';
+   $dil["kayit_sehir"]        = 'Şehir :';
+   $dil["kayit_posta_kodu"]        = 'Posta Kodu :';
+   $dil["kayit_adres"]        = 'Adres :';
+   $dil["kayit_baslik_adres"]        = 'Adres Bilgileri';
+   $dil["kayit_web_adres"]        = 'Web Adresi :';
+   $dil["kayit_tel_no"]        = 'Tel No :';
+   $dil["kayit_fax_no"]        = 'Fax No :';
+   $dil["kayit_onemli_bilgi"]        = 'Önemli Bilgiler';
+   $dil["kayit_kadi"]        = 'Kullanıcı Adı :';
+   $dil["kayit_sifre"]        = 'Şifre :';
+   $dil["kayit_kategori"]        = 'Kategori :';
+   $dil["kayit_ref_musteri"]        = 'Referans Müşterileriniz:';
+   $dil["kayit_finans_bilgi"]        = 'Finansal Bilgiler';
+   $dil["kayit_gecen_yil_ciro"]        = 'Geçen yıl ciro :';
+   $dil["kayit_ekipman_yatirim"]        = 'Ekipman yatırımı :';
+   $dil["kayit_i_orani"]        = 'İhracat Oranı :';
+   $dil["kayit_kontak_bilgi"]        = 'Kontak Bilgileri';
+   $dil["kayit_hesap_yonetici"]        = 'Hesap Yönetici :';
+   $dil["kayit_sales"]        = 'Satış ve Pazarlama :';
+   $dil["kayit_rd"]        = 'Ar-ge :';
+   $dil["kayit_logis"]        = 'Logistik :';
+   $dil["kayit_purc"]        = 'Satınalma :';
+   $dil["kayit_kalite"]        = 'Kalite :';
+   $dil["kayit_personel"]        = 'Kişi/Ünvan';
+   $dil["kayit_tel"]        = 'Tel';
+   $dil["kayit_email"]        = 'E-mail';
+// Teklis isteme Dil ayarları
+   $dil["verme_baslik"]        = 'Teklif Talebi Oluşturma Ekranı-- Ürün Bilgileri';
+   $dil["verme_talep"]        = 'Talep No';
+   $dil["verme_kategori"]        = 'Kategori';
+   $dil["verme_spec"]        = 'Spek';
+   $dil["verme_okosul"]        = 'Ödeme Koşulu';
+   $dil["verme_teslim"]        = 'Teslim Şekli';
+   $dil["verme_hedef"]        = 'Hedef Fiyat';
+   $dil["verme_at"]        = 'Adres Teslim';
+   $dil["verme_adres"]        = 'Adres';
+   $dil["verme_posta"]        = 'Posta Kodu';
+   $dil["verme_ref"]        = 'Referans No';
+   $dil["verme_ktanim"]        = 'Ürün Kısa Tanım';
+   $dil["verme_forecast"]        = 'Adet Bilgisi';
+   $dil["verme_vade"]        = 'Ödeme Vadesi';
+   $dil["verme_teslim"]        = 'Teslimat Süresi';
+   $dil["verme_para"]        = 'Para Birimi';
+   $dil["verme_aciklama"]        = 'Açıklama';
+   $dil["verme_oku"]        = 'Kabul ediyorum';
+   $dil["verme_uyari"]        = 'Teklif Düzenlemesi yapamazsınız!';
+
+// Teklis verme Dil ayarları
+
+
+   $dil["alma_vbaslik"]        = 'Teklif Verme Ekranı';
+   $dil["alma_tbek"]        = 'Teklif Bekleyenler';
+   $dil["alma_tver"]        = 'Teklif Verdiklerim';
+   $dil["alma_tduzenle"]        = 'Teklif Düzenle';
+   $dil["alma_vtek"]        = 'Verilen Teklifiniz Bulunmuyor!';
+   $dil["alma_uyari"]        = 'Teklif Veremezsiniz!';
+   $dil["alma_ver"]        = 'Teklif Ver';
+   $dil["alma_talep"]        = 'Talep No';
+   $dil["alma_kategori"]        = 'Kategori';
+   $dil["alma_firma"]        = 'Firma';
+   $dil["alma_ktanim"]        = 'Ürün Tanımı';
+   $dil["alma_forecast"]        = 'Adet Bilgisi';
+   $dil["alma_teslim"]        = 'Teslim Şekli';
+   $dil["alma_tsure"]        = 'Teslim Süre';
+   $dil["alma_okosul"]        = 'Ödeme Koşul';
+   $dil["alma_ovade"]        = 'Ödeme Vade';
+   $dil["alma_aciklama"]        = 'Açıklama';
+   $dil["alma_hfiyat"]        = 'Hedef Fiyat';
+   $dil["alma_islem"]        = 'İşlemler';
+   $dil["alma_spec"]        = 'Spek';
+   $dil["alma_itarih"]        = 'İstek Tarihi';
+   $dil["alma_btarih"]        = 'Bitiş Tarihi';
+   $dil["alma_teklif"]        = 'Fiyat Teklifim';
+   $dil["alma_adres"]        = 'Adres';
+
+   
+// Kayıt sayfası Dil ayarları
+
+?>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
