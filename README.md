@@ -24,7 +24,7 @@ Projenin farklı bölümlerini gösteren ekran görüntüleri:
 ![Dashboard](gorsel/1.png)
 ![Dashboard](gorsel/2.png)
 
-*(Not: Yukarıdaki görsel yollarını kendi görsel dosyalarınızın adlarına göre güncelleyin ve `gorsel` klasöründeki resim dosyalarının depoya eklendiğinden emin olun.)*
+
 
 ## Lisans
 
